@@ -1,6 +1,8 @@
 const { connect } = require('./db-connection');
 const mongoose = require('mongoose');
-const url = "mongodb+srv://mumtahina:mumtahina@cluster0.e2bat.mongodb.net/multitenant";
+require('dotenv').config(); 
+
+const url = process.env.MONGODB_URI_MULTITENANT;
 let db;
 const tenantSchema = new mongoose.Schema({ // defines the tenants schema 
     id: Number,

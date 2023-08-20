@@ -1,6 +1,8 @@
 const { connect } = require('./db-connection');
 const mongoose = require('mongoose');
-const url = "mongodb+srv://mumtahina:mumtahina@cluster0.e2bat.mongodb.net";
+require('dotenv').config(); 
+
+const url = process.env.MONGODB_URI;
 let db;
 const customerSchema = new mongoose.Schema({ // defines the customer schema 
     customerName: String
